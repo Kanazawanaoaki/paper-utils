@@ -1,6 +1,5 @@
 #!/bin/sh
 
-command="pdfmin $file"
 for file in `\find . -name '*.pdf'`; do
     if [ ${file%%_*} = ./compressed ]; then
 	echo "$file"
