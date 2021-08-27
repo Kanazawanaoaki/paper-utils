@@ -5,9 +5,9 @@
 - heciファイルをheicフォルダに入れる
 
 - 変換を行う
-``
-python3 heic2jpg.py`
-``
+```
+python3 heic2jpg.py
+```
 
 - jpgフォルダにjpgファイルが入っている
 
