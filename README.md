@@ -23,7 +23,7 @@ python img_size.py [file_name]
 
 ### 画像をクロップ
 ```
-python crop_img_prosilica.py [file_name] [cropped file_name]
+python crop_img_prosilica.py [file_name] [cropped_file_name]
 ```
 でクロップする．
 
