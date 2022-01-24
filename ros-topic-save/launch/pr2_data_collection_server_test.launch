@@ -1,0 +1,36 @@
+<launch>
+  <!-- c.f. https://jsk-common.readthedocs.io/en/latest/jsk_data/node_scripts/data_collection_server.html , https://github.com/start-jsk/jsk_apc/blob/master/demos/selective_dualarm_stowing/launch/bimanual_stow_data_collection.launch#L130-L202 -->
+  <arg name="collect_data" default="true" />
+  
+  <!-- <node name="timer_stow_data_collection" -->
+  <!--       pkg="jsk_data" type="data_collection_server.py" -->
+  <!--       output="screen" if="$(arg collect_data)"> -->
+  <!--     <rosparam subst_value="true"> -->
+  <!--       slop: 1.0 -->
+  <!--       method: timer -->
+  <!--       hz: 1.0 -->
+  <!--       topics: -->
+  <!--         - name: /kinect_head/rgb/image_rect_color -->
+  <!--           msg_class: sensor_msgs/Image -->
+  <!--           fname: pr2_image_rect_color_time.png -->
+  <!--           savetype: ColorImage -->
+  <!--     </rosparam> -->
+  <!--   </node> -->
+  
+  <node name="after_stow_data_collection"
+        pkg="jsk_data" type="data_collection_server.py"
+        output="screen" if="$(arg collect_data)">
+    <rosparam subst_value="true">
+      message_filters: true
+      approximate_sync: true
+      method: request
+      save_dir: ~/Desktop/rosbags/data_collection/pr2
+      method: request
+      topics:
+          - name: /kinect_head/rgb/image_rect_color
+            msg_class: sensor_msgs/Image
+            fname: pr2_image_rect_color_request.png
+            savetype: ColorImage
+      </rosparam>
+    </node>
+</launch>
