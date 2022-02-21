@@ -59,15 +59,15 @@ class RosbagReader(object):
                     bag_img_list.append(img_rgb)
                     
             # data saves
-            movie_file = self.data_dir+str(file_name[file_name.rfind('/')+1:])+".mp4"
+            movie_file = self.data_dir+str(file_name[file_name.rfind('/')+1:file_name.rfind('.')])+".mp4"
             self.save_video(bag_img_list, movie_file)
             print("image also saved in {}".format(movie_file))
             
 if __name__ == '__main__':
-    bag_dir = sys.argv[sys.argv.index("-b") + 1] if "-b" in sys.argv else 'bags/'
+    bag_dir = sys.argv[sys.argv.index("-b") + 1] if "-b" in sys.argv else '../../bags/'
     if bag_dir[-1:] != '/':
         bag_dir += '/'
-    data_dir = sys.argv[sys.argv.index("-d") + 1] if "-d" in sys.argv else 'movies/'
+    data_dir = sys.argv[sys.argv.index("-d") + 1] if "-d" in sys.argv else '../data/from_rosbag/'
     if data_dir[-1:] != '/':
         data_dir += '/'
     reader=RosbagReader(bag_dir,data_dir)
