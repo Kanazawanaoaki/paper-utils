@@ -11,5 +11,5 @@ for file in `\find . -name '*.mp4'`; do
         mkdir "$mkdir_one_line"
         echo ""$mkdir_one_line"を作りました"
     fi    
-    ffmpeg -i ${name}.mp4 -ss 0 -t 10 -r 10 -f image2 ${name}/${name}-%06d.jp
+    ffmpeg -i ${name}.mp4 -ss 0 -t 10 -r 10 -f image2 ${name}/${name}-%06d.jpg
 done
