@@ -5,8 +5,16 @@ ROSトピックの保存方法についてメモなど．
 data collection serverを使う．サンプルのlaunchがある．
 
 ## image topic save
+[iamge_saver](http://wiki.ros.org/image_view#image_view.2Fdiamondback.image_saver )
 ```
-rosrun image_view image_saver image:=/camera/rgb/image_raw save_all_image:=false __name:=image_saver
+rosrun image_view image_saver image:=/camera/rgb/image_raw _filename_format:=left%04d.%s
+```
+save with service
+```
+rosrun image_view image_saver image:=/camera/rgb/image_raw _save_all_image:=false _filename_format:=left%04d.%s
+```
+```
+rosservice call /image_saver_[hogehoge]/save
 ```
 
 ## image topic to movie
