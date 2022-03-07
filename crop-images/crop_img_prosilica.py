@@ -13,12 +13,11 @@ h,w,ch = im.shape
 
 print(h,w)
 
-x_num = int(round(h/32))*9
-# x_size = 960
-x_size = 1200
-y_num = int(round(w/32))*3
-# y_size = 720
-y_size = 900
+num = 350
+x_num = int(round(h/32))*11
+y_num = int(round(w/32))*4
+x_size = 4 * num
+y_size = 3 * num
 
 im_cropped = im[y_num:y_num+y_size, x_num:x_num+x_size, :]
 
