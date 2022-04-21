@@ -4,13 +4,17 @@
 
 ## 動画から画像を取り出す
 ```
-ffmpeg -i 元動画.avi -ss 144 -t 148 -r 24 -f image2 %06d.jpg
+ffmpeg -i 元動画 -ss 144 -t 148 -r 24 -f image2 %06d.jpg
 ```
 -i 元動画.avi : 元動画  
 -ss 144 : 抜き出し始点(秒)  
 -t 148 : 抜き出し終点(秒)  
 -r 24 : 1秒あたり何枚抜き出すか  
 -f image2 %06d.jpg : jpeg で[000001.jpg]から連番で書き出し  
+```
+ffmpeg -i 元動画. -f image2 -vcodec mjpeg -qscale 1 -qmin 1 -qmax 1 %05d.jpg
+```
+で高解像度に取り出すこともできる．
 
 ## crop-images
 画像を切り出す
