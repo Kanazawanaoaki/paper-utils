@@ -32,4 +32,4 @@ for i in heic_path:
     m = "./" + str(i)
     n = './jpg/' + str(i.stem) + '.jpg'
     heic_png(m, n)
-                            
+    print("{} is converted to {}".format(m,n))
