@@ -11,3 +11,10 @@ python3 heic2jpg.py
 
 - jpgフォルダにjpgファイルが入っている
 
+- 不要になった画像ファイルを削除する
+
+heicファイルもjpgファイルも削除されてしまうので注意
+
+```
+python3 clean.py
+```
