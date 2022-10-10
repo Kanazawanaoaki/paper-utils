@@ -1,5 +1,7 @@
 # paper-utils extra heic2jpg
 
+[pyheifのインストール](https://github.com/carsales/pyheif#installation )が必要．
+
 ## heicファイルをjpgに変換する
 
 - heicファイルをheicフォルダに入れる
