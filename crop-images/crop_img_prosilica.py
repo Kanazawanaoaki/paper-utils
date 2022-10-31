@@ -1,12 +1,13 @@
 import cv2
-import sys
+import argparse
 
-path = "carrot-rotate-peel-kinect/pr2_kinect_after_peel.png"
-path2 = "carrot-rotate-peel-kinect/pr2_kinect_after_peel.png"
-if len(sys.argv)>=2:
-    path = sys.argv[1]
-    if len(sys.argv)>=3:
-        path2 = sys.argv[2]
+parser = argparse.ArgumentParser(description='grey scale converter')
+parser.add_argument('-o', '--original', default="carrot-rotate-peel-kinect/pr2_kinect_after_peel.png")
+parser.add_argument('-c', '--cropped', default="carrot-rotate-peel-kinect/pr2_kinect_after_peel.png")
+args = parser.parse_args()
+
+path = args.original
+path2 = args.cropped
 
 im = cv2.imread(path)
 h,w,ch = im.shape
