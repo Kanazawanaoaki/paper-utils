@@ -1,22 +1,23 @@
 import cv2
-import sys
+import argparse
 
-path = "carrot-rotate-peel-kinect/pr2_kinect_after_peel.png"
-path2 = "carrot-rotate-peel-kinect/pr2_kinect_after_peel.png"
-if len(sys.argv)>=2:
-    path = sys.argv[1]
-    if len(sys.argv)>=2:
-        path2 = sys.argv[2]
-        
+parser = argparse.ArgumentParser(description='grey scale converter')
+parser.add_argument('-o', '--original', default="carrot-rotate-peel-kinect/pr2_kinect_after_peel.png")
+parser.add_argument('-c', '--cropped', default="carrot-rotate-peel-kinect/pr2_kinect_after_peel.png")
+args = parser.parse_args()
+
+path = args.original
+path2 = args.cropped
+
 im = cv2.imread(path)
 h,w,ch = im.shape
 
-y_num = int(round(h/32))*19
-y_size = 120
+y_num = int(round(w/32))*19
+y_size = 90
 x_num = int(round(h/32))*19
-x_size = 90
+x_size = 120
 
-im_cropped = im[x_num:x_num+x_size , y_num:y_num+y_size, :]
+im_cropped = im[y_num:y_num+y_size, x_num:x_num+x_size, :]
 
 cv2.imwrite(path2, im_cropped, [int(cv2.IMWRITE_JPEG_QUALITY), 100])
 print(im_cropped.shape)
