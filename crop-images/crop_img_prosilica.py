@@ -7,15 +7,15 @@ if len(sys.argv)>=2:
     path = sys.argv[1]
     if len(sys.argv)>=3:
         path2 = sys.argv[2]
-        
+
 im = cv2.imread(path)
 h,w,ch = im.shape
 
 print(h,w)
 
 num = 350
-x_num = int(round(h/32))*11
-y_num = int(round(w/32))*4
+x_num = int(round(w/32))*6
+y_num = int(round(h/32))*4
 x_size = 4 * num
 y_size = 3 * num
 
