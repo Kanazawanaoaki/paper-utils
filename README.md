@@ -14,7 +14,12 @@ ffmpeg -i 元動画 -ss 144 -t 148 -r 24 -f image2 %06d.jpg
 ```
 ffmpeg -i 元動画. -r 1 -f image2 -vcodec mjpeg -qscale 1 -qmin 1 -qmax 1 %05d.jpg
 ```
-で高解像度に取り出すこともできる．
+で高解像度に取り出すこともできる．  
+
+それをディレクトリ内の全動画に実行するスクリプトもある．
+```
+bash movie2image.bash
+```
 
 ## crop-images
 画像を切り出す

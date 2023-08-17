@@ -23,3 +23,7 @@ done
 for file in `\find . -name '*.MP4'`; do
     movie2image ${file}
 done
+
+for file in `\find . -name '*.MOV'`; do
+    movie2image ${file}
+done
