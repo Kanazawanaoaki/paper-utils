@@ -21,6 +21,15 @@ ffmpeg -i 元動画. -r 1 -f image2 -vcodec mjpeg -qscale 1 -qmin 1 -qmax 1 %05d
 bash movie2image.bash
 ```
 
+## 動画から音声を抽出
+```
+ffmpeg -i input.mp4 output.mp3
+```
+それをディレクトリ内の全動画に実行するスクリプトもある．
+```
+bash audio_from_video.sh
+```
+
 ## crop-images
 画像を切り出す
 
