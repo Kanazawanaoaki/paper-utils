@@ -27,3 +27,7 @@ done
 for file in `\find . -name '*.MOV'`; do
     movie2image ${file}
 done
+
+for file in `\find . -name '*.avi'`; do
+    movie2image ${file}
+done
