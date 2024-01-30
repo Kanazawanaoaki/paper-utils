@@ -6,11 +6,11 @@
 ```
 ffmpeg -i 元動画 -ss 144 -t 148 -r 24 -f image2 %06d.jpg
 ```
--i 元動画.avi : 元動画
--ss 144 : 抜き出し始点(秒)
--t 148 : 抜き出し終点(秒)
--r 24 : 1秒あたり何枚抜き出すか
--f image2 %06d.jpg : jpeg で[000001.jpg]から連番で書き出し
+-i 元動画.avi : 元動画  
+-ss 144 : 抜き出し始点(秒)  
+-t 148 : 抜き出し終点(秒)  
+-r 24 : 1秒あたり何枚抜き出すか  
+-f image2 %06d.jpg : jpeg で[000001.jpg]から連番で書き出し  
 ```
 ffmpeg -i 元動画. -r 1 -f image2 -vcodec mjpeg -qscale 1 -qmin 1 -qmax 1 %05d.jpg
 ```
@@ -31,7 +31,7 @@ bash audio_from_video.sh
 ```
 
 ## crop-images
-画像を切り出す
+画像を切り出す．crop-imagesのフォルダを利用．
 
 ### 画像サイズ確認
 ```
@@ -40,14 +40,14 @@ python img_size.py [file_name]
 で画像ファイルのサイズを見る．
 
 ### 画像をクロップ
-crop_img_prosilica.pyを編集して範囲を指定する．
+crop_img_prosilica.pyを編集して範囲を指定する．少し分かりづらいかも．
 ```
 python crop_img_prosilica.py [file_name] [cropped_file_name]
 ```
 でクロップする．
 
 ### フォルダ内の画像をクロップ
-フォルダ内の画像を同じ範囲で一気にクロップする．corp_img_prosilica.pyとcrop.bashがあるディレクトリに画像を入れて以下を実行．
+フォルダ内の画像を同じ範囲で一気にクロップする．corp_img_prosilica.pyとcrop.bashがあるディレクトリに画像を全て入れて以下を実行．
 ```
 bash crop.bash
 ```
