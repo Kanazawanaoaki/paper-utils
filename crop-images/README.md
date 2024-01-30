@@ -8,7 +8,7 @@ python img_size.py [file_name]
 で画像ファイルのサイズを見る．
 
 ### 画像をクロップ
-crop_img_prosilica.pyを編集して範囲を指定する．少し分かりづらいかも．
+crop_img_prosilica.pyのx_num, y_num, x_size, y_sizeを編集して，クロップ範囲を指定する．
 ```
 python crop_img_prosilica.py [file_name] [cropped_file_name]
 ```
