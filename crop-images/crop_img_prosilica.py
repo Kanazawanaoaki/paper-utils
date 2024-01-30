@@ -15,10 +15,10 @@ h,w,ch = im.shape
 print(h,w)
 
 num = 350
-x_num = int(round(w/32))*6
-y_num = int(round(h/32))*4
-x_size = 4 * num
-y_size = 3 * num
+x_num = int(round(w/32))*6 ## 切り抜く範囲のx座標の開始地点
+y_num = int(round(h/32))*4 ## 切り抜く範囲のy座標の開始地点
+x_size = 4 * num ## 切り抜く範囲のx軸方向の大きさ
+y_size = 3 * num ## 切り抜く範囲のy軸方向の大きさ
 
 im_cropped = im[y_num:y_num+y_size, x_num:x_num+x_size, :]
 
