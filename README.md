@@ -66,6 +66,12 @@ convert image.jpg image.png
 ```
 bash jpg2png-convert.bash
 ```
+## pdfをepsへ変換
+```bash
+for i in *.pdf; do
+pdftops -eps $i
+done
+```
 
 # フォルダ内のスクリプト
 
