@@ -30,6 +30,45 @@ ffmpeg -i input.mp4 output.mp3
 bash audio_from_video.sh
 ```
 
+## 画像のフォルダを動画にする
+画像が入っているフォルダを指定して，指定したパスに動画を出力する．
+```bash
+python image_folder_to_video.py -i /home/kanazawa/Downloads/20240614_tracking_test/20240525_cup_test_images/rgb -o /home/kanazawa/Downloads/20240614_tracking_test/20240525_cup_test_images/20240525_cup_test_images.mp4
+```
+
+## グレイスケールに変換する
+```
+python grey_scale_conv.py [file_name] [grey_file_name]
+```
+
+### フォルダ内の画像をグレイスケール変換
+```
+bash grey.bash
+```
+
+## pngとjpgの変換
+pngからjpgに変換
+```
+convert image.png -quality 85 image.jpg
+```
+
+フォルダ内の画像をpngからjpgに変換する
+```
+bash png2jpg-convert.bash
+```
+
+jpgからpngに変換
+```
+convert image.jpg image.png
+```
+
+フォルダ内の画像をjpgからpngに変換する
+```
+bash jpg2png-convert.bash
+```
+
+# フォルダ内のスクリプト
+
 ## crop-images
 画像を切り出す．crop-imagesのフォルダを利用．
 
@@ -62,37 +101,10 @@ bash pdfmin.bash
 でフォルダ内のpdfファイルの余白を取り除く．
 
 
-## グレイスケールに変換する
+## comp-images
 
-```
-python grey_scale_conv.py [file_name] [grey_file_name]
-```
 
-### フォルダ内の画像をグレイスケール変換
+## heic2jpg
 
-```
-bash grey.bash
-```
 
-## pngとjpgの変換
-
-pngからjpgに変換
-```
-convert image.png -quality 85 image.jpg
-```
-
-フォルダ内の画像をpngからjpgに変換する
-```
-bash png2jpg-convert.bash
-```
-
-jpgからpngに変換
-```
-convert image.jpg image.png
-```
-
-フォルダ内の画像をjpgからpngに変換する
-```
-bash jpg2png-convert.bash
-```
-
+## ros-topic-save
